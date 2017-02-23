@@ -123,7 +123,7 @@ export class AppComponent implements OnInit {
             texts: [
                 {
                     id: 't1',
-                    text: 'text: Some more text here',
+                    text: 'text: Dynamische tekst',
                     position: '9 0 -7',
                     rotation: '0 -90 0',
                     scale: '2 2 2',
@@ -184,7 +184,7 @@ export class AppComponent implements OnInit {
     }
 
     onMouseEnter($event: any, door: IVrDoor) {
-        $event.target.dispatchEvent(new CustomEvent('vgStartAnimation'));
+        $event.target.dispatchEvent(new CustomEvent('∂'));
 
         this.timeout = TimerObservable.create(2000).subscribe(
             () => {
@@ -224,9 +224,6 @@ export class AppComponent implements OnInit {
     ngOnDestroy() {
         this.timeout.unsubscribe();
     }
-
-    test(evt) {
-        console.log(evt);
-    }
+ç
 }
 
