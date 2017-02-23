@@ -22,9 +22,11 @@
                 "styles.css"
             ],
             "scripts": [
-                "../node_modules/aframe/dist/aframe-v0.4.0.min.js",
+                "../node_modules/aframe/dist/aframe-master.js",
                 "../node_modules/aframe-animation-component/dist/aframe-animation-component.min.js",
-                "../node_modules/aframe-bmfont-text-component/dist/aframe-bmfont-text-component.min.js",
+                "../node_modules/aframe-event-set-component/dist/aframe-event-set-component.min.js",
+                "../node_modules/aframe-layout-component/dist/aframe-layout-component.min.js",
+                "../node_modules/aframe-template-component/dist/aframe-template-component.min.js",
                 "../node_modules/zone.js/dist/zone.js",
                 "../node_modules/reflect-metadata/Reflect.js"
             ],

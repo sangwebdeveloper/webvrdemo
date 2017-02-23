@@ -56,8 +56,28 @@ export class AppComponent implements OnInit {
             doors: [
                 {id: 'd1', position: '-3 2 -10', rotation: '0 0 0', goto: 'v1'}
             ],
-            texts: [],
-            textPlanes: []
+            texts: [
+                {
+                    id: 't1',
+                    text: 'value: We can place any text we want here; height:14;',
+                    position: '6 0 -4',
+                    rotation: '0 -30 0',
+                    scale: '5 5 5',
+                    opaAnim: 'startEvents: t1; property: opacity; dur: 300; from: 0; to: 1; elasticity: 1000',
+                    posAnim: 'startEvents: t1; property: position; dur: 500; from: 6 0 -4; to: 6 0.3 -4; elasticity: 1000'
+                }
+            ],
+            textPlanes: [
+                {
+                    id: 'p1',
+                    position: '17 0 -7',
+                    rotation: '-90 -30 0',
+                    width: 20,
+                    height: 20,
+                    target: 't1',
+                    isShown: false
+                }
+            ]
         },
         {
             id: 'v1',
@@ -70,10 +90,10 @@ export class AppComponent implements OnInit {
             texts: [
                 {
                     id: 't1',
-                    text: 'text: We can place any text we want here',
+                    text: 'value: We can place any text we want here',
                     position: '6 0 -4',
                     rotation: '0 -30 0',
-                    scale: '2 2 2',
+                    scale: '5 5 5',
                     opaAnim: 'startEvents: t1; property: opacity; dur: 300; from: 0; to: 1; elasticity: 1000',
                     posAnim: 'startEvents: t1; property: position; dur: 500; from: 6 0 -4; to: 6 0.3 -4; elasticity: 1000'
                 }
@@ -123,10 +143,10 @@ export class AppComponent implements OnInit {
             texts: [
                 {
                     id: 't1',
-                    text: 'text: Dynamische tekst',
+                    text: 'value: Dynamische tekst',
                     position: '9 0 -7',
                     rotation: '0 -90 0',
-                    scale: '2 2 2',
+                    scale: '5 5 5',
                     opaAnim: 'startEvents: t1; property: opacity; dur: 300; from: 0; to: 1; elasticity: 1000',
                     posAnim: 'startEvents: t1; property: position; dur: 500; from: 9 0 -7; to: 9 0.6 -7; elasticity: 1000'
                 }
@@ -184,7 +204,7 @@ export class AppComponent implements OnInit {
     }
 
     onMouseEnter($event: any, door: IVrDoor) {
-        $event.target.dispatchEvent(new CustomEvent('∂'));
+        $event.target.dispatchEvent(new CustomEvent('vgStartAnimation'));
 
         this.timeout = TimerObservable.create(2000).subscribe(
             () => {

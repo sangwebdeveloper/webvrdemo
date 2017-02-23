@@ -36,13 +36,11 @@
                 [attr.position]="txt.position"
                 [attr.rotation]="txt.rotation"
                 [attr.scale]="txt.scale"
-                [attr.bmfont-text]="txt.text"
+                [attr.text]="txt.text"
                 [attr.animation__visibility]="txt.opaAnim"
                 [attr.animation__position]="txt.posAnim"
                 opacity="0"
         ></a-entity>
-
-
         <a-image
                 *ngFor="let door of currentVideo.doors; let i=index"
                 [id]="door.id"
@@ -65,10 +63,11 @@
 
         <a-entity camera look-controls>
             <a-cursor id="cursor"
+                      material="color: yellow; shader: flat"
                       animation__click="property: scale; startEvents: click; from: 0.1 0.1 0.1; to: 1 1 1; dur: 150"
                       animation__fusing="property: fusing; startEvents: fusing; from: 1 1 1; to: 0.1 0.1 0.1; dur: 1500"
                       event-set__1="_event: mouseenter; color: springgreen"
-                      event-set__2="_event: mouseleave; color: black"
+                      event-set__2="_event: mouseleave; color: yellow"
                       raycaster="objects: .link"></a-cursor>
         </a-entity>
     </a-scene>
